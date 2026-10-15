@@ -1,4 +1,3 @@
-using CleanSolution.Application.Features.Settings.Commands;
 using CleanSolution.Web.Models;
 using Cortex.Mediator;
 using Microsoft.AspNetCore.Mvc;
@@ -18,12 +17,6 @@ namespace CleanSolution.Web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var setting = new AddSettingCommand()
-            {
-                Description = "seq guid"
-            };
-            var id = await _mediator.SendCommandAsync<AddSettingCommand, Guid>(setting);
-            
             return View();
         }
 
